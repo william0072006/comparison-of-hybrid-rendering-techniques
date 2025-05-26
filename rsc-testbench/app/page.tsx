@@ -2,7 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { HeroView } from "@/components/Hero";
 import { FeaturedCarsView } from "@/components/FeaturedCars";
 import { GarageView } from "@/components/Garage";
-import { RaceScheduleView } from "@/components/RaceSchedule";
+import { RaceScheduleWrapper } from "@/components/RaceSchedule";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <HeroView />
       <FeaturedCarsView />
       <GarageView />
-      <RaceScheduleView />
+      <RaceScheduleWrapper />
     </div>
   );
 }
