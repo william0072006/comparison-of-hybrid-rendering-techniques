@@ -7,13 +7,13 @@ import scheduleIcon from "@/public/icons/schedule-icon.svg";
 import { Race } from "./components";
 import { getRaceSchedule, RaceScheduleResponse } from "@/api/getRaceSchedule";
 
-export const RaceScheduleView = () => {
-  const [time, setTime] = useState("");
-  const [races, setRaces] = useState<RaceScheduleResponse>([]);
+type Props = {
+  initialRaces: RaceScheduleResponse;
+};
 
-  useEffect(() => {
-    void handleFetchRaces("now");
-  }, []);
+export const RaceScheduleView = ({ initialRaces }: Props) => {
+  const [time, setTime] = useState("");
+  const [races, setRaces] = useState<RaceScheduleResponse>(initialRaces);
 
   useEffect(() => {
     const updateClock = () => {
