@@ -1,6 +1,6 @@
 "use client";
 
-import { Car } from "@/components/FeaturedCars/components";
+import { Car } from "./components";
 import { useEffect, useState } from "react";
 import { getFeaturedCars, FeaturedCarsResponse } from "@/api/getFeaturedCars";
 
@@ -30,7 +30,7 @@ export const FeaturedCarsView = () => {
   );
 
   const renderCars = () => (
-    <div className="flex w-full justify-around px-20 mt-12">
+    <div className="flex w-full justify-around px-20 mt-12 mb-20">
       {featuredCars.map((car) => (
         <Car
           key={car.id}
@@ -46,7 +46,7 @@ export const FeaturedCarsView = () => {
 
   return (
     <div
-      className="flex flex-col items-center w-full h-220 bg-[#1D0609] mt-38"
+      className="flex flex-col items-center w-full bg-[#1D0609] mt-38"
       id="featured-cars"
     >
       {renderTitle()}
