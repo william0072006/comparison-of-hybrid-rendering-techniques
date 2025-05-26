@@ -6,8 +6,8 @@ export const Navbar = () => (
       </a>
       <div className="flex space-x-8 text-xl font-medium">
         <a href="#featured-cars">Featured Cars</a>
-        <a href="#">3D Garage</a>
-        <a href="#">Race Schedule</a>
+        <a href="#garage">3D Garage</a>
+        <a href="#race-schedule">Race Schedule</a>
       </div>
     </div>
   </div>

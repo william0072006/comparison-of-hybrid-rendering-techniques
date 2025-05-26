@@ -12,7 +12,7 @@ export const HeroView = () => (
       Where cutting-edge engineering meets raw adrenaline
     </p>
 
-    <button className="mt-12 px-12 py-2 bg-[#1D0609] text-[#439361] text-xl font-medium rounded-4xl">
+    <button className="mt-12 px-12 py-2 bg-[#1D0609] text-[#439361] text-xl font-medium rounded-4xl cursor-pointer">
       Explore
     </button>
 
@@ -22,6 +22,7 @@ export const HeroView = () => (
         alt="An image of Formula 1 cars on a racetrack."
         placeholder="blur"
         className="rounded-xl"
+        priority
       />
     </div>
   </div>
