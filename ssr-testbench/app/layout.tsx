@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "A test website for RCS rendering technique.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function RootLayout({
   children,
 }: Readonly<{
