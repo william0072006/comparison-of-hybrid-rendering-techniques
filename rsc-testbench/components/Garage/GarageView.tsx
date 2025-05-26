@@ -1,11 +1,10 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import dynamic from "next/dynamic";
+
+const CarModel = dynamic(() => import("./components/CarModel"), { ssr: false });
 
 export const GarageView = () => {
-  const { scene } = useGLTF("/models/sf23.glb");
-
   return (
     <div className="flex flex-col items-center w-full" id="garage">
       <div className="flex flex-col items-center w-full pt-14">
@@ -15,12 +14,7 @@ export const GarageView = () => {
         </h3>
       </div>
       <div className="flex justify-center items-center w-full max-w-[70%] h-[60vh] mt-12">
-        <Canvas camera={{ position: [6, 3, 1], fov: 20 }}>
-          <ambientLight intensity={2.5} />
-          <directionalLight position={[2, 2, 5]} intensity={4} />
-          <primitive object={scene} />
-          <OrbitControls />
-        </Canvas>
+        <CarModel />
       </div>
       <p className="text-lg font-medium pl-0.5 mt-[-0.2rem]">
         Use cursor to move around. &quot;Scuderia Ferrari F1 SF23 2023&quot; 3D
