@@ -14,11 +14,9 @@ const shrikhand = Shrikhand({
 });
 
 export const metadata: Metadata = {
-  title: "F1 Pulse - RCS",
-  description: "A test website for RCS rendering technique.",
+  title: "F1 Pulse - SSG",
+  description: "A test website for SSG rendering technique.",
 };
-
-export const dynamic = "force-dynamic";
 
 export default function RootLayout({
   children,
