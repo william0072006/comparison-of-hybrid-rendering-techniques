@@ -1,4 +1,6 @@
-import CarModel from "./components/CarModel.tsx";
+import { Suspense, lazy } from "react";
+
+const CarModel = lazy(() => import("./components/CarModel"));
 
 export const GarageView = () => {
   return (
@@ -10,7 +12,9 @@ export const GarageView = () => {
         </h3>
       </div>
       <div className="flex justify-center items-center w-full max-w-[70%] h-[60vh] mt-12">
-        <CarModel />
+        <Suspense fallback={<div>Loading car model...</div>}>
+          <CarModel />
+        </Suspense>
       </div>
       <p className="text-lg font-medium pl-0.5 mt-[-0.2rem]">
         Use cursor to move around. &quot;Scuderia Ferrari F1 SF23 2023&quot; 3D
