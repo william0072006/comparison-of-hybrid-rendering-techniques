@@ -15,7 +15,7 @@ export const FeaturedCarsView = () => {
     };
 
     void fetchCars();
-  });
+  }, []);
 
   const renderTitle = () => (
     <div className="flex flex-col w-full pt-14 pl-20">
