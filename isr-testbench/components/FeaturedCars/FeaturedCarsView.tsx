@@ -1,24 +1,10 @@
-"use client";
-
 import { Car } from "./components";
-import { useEffect, useState } from "react";
-import { getFeaturedCars, FeaturedCarsResponse } from "@/api/getFeaturedCars";
+import { getFeaturedCars } from "@/api/getFeaturedCars";
 
-export const FeaturedCarsView = () => {
-  const [featuredCars, setFeaturedCars] = useState<FeaturedCarsResponse>([]);
+export const revalidate = 30;
 
-  useEffect(() => {
-    const fetchFeaturedCars = async () => {
-      try {
-        const cars = await getFeaturedCars();
-        setFeaturedCars(cars);
-      } catch (error) {
-        console.error("Error fetching featured cars:", error);
-      }
-    };
-
-    void fetchFeaturedCars();
-  }, []);
+export const FeaturedCarsView = async () => {
+  const featuredCars = await getFeaturedCars();
 
   const renderTitle = () => (
     <div className="flex flex-col w-full pt-14 pl-20">
