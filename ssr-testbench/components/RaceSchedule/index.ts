@@ -1,1 +1,1 @@
-export * from "./RaceScheduleWrapper";
+export * from "./RaceScheduleView";

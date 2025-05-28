@@ -1,5 +1,3 @@
-"use client";
-
 import dynamic from "next/dynamic";
 
 const CarModel = dynamic(() => import("./components/CarModel"), { ssr: false });

@@ -1,9 +1,11 @@
 import { Car } from "./components";
-import { getFeaturedCars } from "@/api/getFeaturedCars";
+import { FeaturedCarsResponse } from "@/api/getFeaturedCars";
 
-export const FeaturedCarsView = async () => {
-  const featuredCars = await getFeaturedCars();
+type Props = {
+  featuredCars: FeaturedCarsResponse;
+};
 
+export const FeaturedCarsView = ({ featuredCars }: Props) => {
   const renderTitle = () => (
     <div className="flex flex-col w-full pt-14 pl-20">
       <h2 className="text-7xl font-bold text-[#80978F]">Featured Cars</h2>
