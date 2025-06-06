@@ -11,28 +11,36 @@ export default function Home() {
       <Navbar />
 
       <Suspense
-        fallback={<div className="text-[#1D0609]">Loading hero...</div>}
+        fallback={
+          <div className="text-[#1D0609] h-[1307px]">Loading hero...</div>
+        }
       >
         <HeroView />
       </Suspense>
 
       <Suspense
         fallback={
-          <div className="text-[#1D0609]">Loading featured cars...</div>
+          <div className="text-[#1D0609] h-[848px]">
+            Loading featured cars...
+          </div>
         }
       >
         <FeaturedCarsView />
       </Suspense>
 
       <Suspense
-        fallback={<div className="text-[#1D0609]">Loading garage...</div>}
+        fallback={
+          <div className="text-[#1D0609] h-[1052px]">Loading garage...</div>
+        }
       >
         <GarageView />
       </Suspense>
 
       <Suspense
         fallback={
-          <div className="text-[#1D0609]">Loading race schedule...</div>
+          <div className="text-[#1D0609] h-[420px]">
+            Loading race schedule...
+          </div>
         }
       >
         <RaceScheduleWrapper />
