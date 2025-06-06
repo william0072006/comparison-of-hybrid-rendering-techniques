@@ -13,8 +13,10 @@ type Props = {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const featuredCars = await getFeaturedCars();
-  const initialRaces = await getRaceSchedule("now");
+  const [featuredCars, initialRaces] = await Promise.all([
+    getFeaturedCars(),
+    getRaceSchedule("now"),
+  ]);
 
   return {
     props: {

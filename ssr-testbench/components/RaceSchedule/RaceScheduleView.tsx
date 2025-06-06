@@ -4,6 +4,24 @@ import Image from "next/image";
 import scheduleIcon from "@/public/icons/schedule-icon.svg";
 import { Race } from "./components";
 import { getRaceSchedule, RaceScheduleResponse } from "@/api/getRaceSchedule";
+import _ from "lodash";
+
+// This is an array of fake data to stress the rendering process.
+const fakeData = Array.from({ length: 100000 }, (_, i) => ({
+  id: i + 1,
+  title: `Document #${i + 1}`,
+  tags: ["tagA", "tagB", "tagC"],
+  content: `Lorem ipsum dolor sit amet, item ${i + 1}`,
+}));
+
+const grouped = _.groupBy(fakeData, (item) => item.tags[0]);
+
+const topResults = _(grouped)
+  .values()
+  .flatten()
+  .orderBy("title", "desc")
+  .slice(0, 500)
+  .value();
 
 type Props = {
   initialRaces: RaceScheduleResponse;
@@ -88,6 +106,7 @@ export const RaceScheduleView = ({ initialRaces }: Props) => {
       className="grid grid-cols-[70%_30%] w-full bg-[#1D0609] mt-10"
       id="race-schedule"
     >
+      <div className="hidden">{_.toString(topResults)}</div>
       {renderSchedule()}
       {renderInfo()}
     </div>
