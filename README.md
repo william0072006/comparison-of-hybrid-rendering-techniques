@@ -38,4 +38,4 @@ These projects were developed using the following technologies:
 
 ## Attribution
 
-Developed by Igor Stalmach as part of a _"Comparison of Hybrid Rendering Techniques"_ Master's thesis on rendering strategies in React.
+Developed by Igor Stalmach as part of a _"Comparison of Hybrid Rendering Techniques"_ master's thesis on rendering strategies in React.
